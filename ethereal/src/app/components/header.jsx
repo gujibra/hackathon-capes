@@ -7,7 +7,7 @@ export default function Header() {
     useEffect(() => {
       
       let a = window.location.pathname;
-      setCurrentUrl("/" + a.slice(1));
+      setCurrentUrl(" /    " + a.slice(1));
     }, []);
 
     return (
@@ -106,14 +106,14 @@ export default function Header() {
                 <div className="container mx-auto px-4 max-w-5xl">
                     <ul className="flex items-center text-sm text-white space-x-2">
                         <li>
-                            <a href="https://www.periodicos.capes.gov.br/" className="flex items-center hover:underline">
+                            <a href="/" className="flex items-center hover:underline">
                                 <i className="fas fa-home mr-2"></i>
                                 <span>Home</span>
                             </a>
                         </li>
                         
-                        <li>
-                            <a href="" className="hover:underline">{" /  verifique  " + currentUrl}</a>
+                        <li> 
+                            <a href="" className="hover:underline">{currentUrl}</a>
                         </li>
                         
                     </ul>

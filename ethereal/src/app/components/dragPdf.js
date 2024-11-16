@@ -14,6 +14,7 @@ export default function Overlay({ setOverlayState }) {
   const [fadeIn, setFadeIn] = useState(false);
 
   const overlayRef = useRef(null);
+  
 
 
   useEffect(() => {
@@ -99,7 +100,7 @@ export default function Overlay({ setOverlayState }) {
           onClick={() => setOverlayState(false)}
           className="absolute top-2 right-2 text-xl text-gray-600 hover:text-gray-900 font-bold transition-colors duration-300"
         >
-          <i class="fa-solid fa-x"></i>
+          <i className="fa-solid fa-x"></i>
         </button>
 
 

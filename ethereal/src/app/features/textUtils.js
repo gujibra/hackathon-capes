@@ -10,10 +10,8 @@ export const saveText = (texto) => {
   export const readText = () => {
     const texto = localStorage.getItem('textoTemporario');
     if (texto) {
-      console.log('Texto encontrado:', texto);
       return texto;
     } else {
-      console.log('Nenhum texto encontrado');
       return null;
     }
   };

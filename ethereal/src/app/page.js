@@ -4,13 +4,16 @@ import React, { useState } from 'react';
 import Overlay from './components/dragPdf';
 import Header from './components/header';
 
+
 export default function App() {
   const [overlayState, setOverlayState] = useState(false);
+ 
 
   return (
     <div className="main">
       <Header />
       <div className="flex flex-col items-center justify-start min-h-screen space-y-6 mt-10 pt-4">
+        
         {overlayState && <Overlay setOverlayState={setOverlayState} />}
         <div className="person">
           <i className="fa-solid fa-address-book text-9xl" style={{ color: '#1a3269' }}></i>
@@ -31,4 +34,5 @@ export default function App() {
       </div>
     </div>
   );
+  
 }
