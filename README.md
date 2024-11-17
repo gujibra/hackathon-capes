@@ -1,6 +1,6 @@
 ## Objetivo
 
-Esse projeto visa facilitar a revisão de artigos cientificos utilizando A.I
+Projeto feito para o hackathon da CAPES
 
 
 ## Execução 
@@ -19,7 +19,7 @@ npm install
 ```sh
 npm run dev ou 
 
-npm run buil  
+npm run build  
 npm run start
 ```
 
