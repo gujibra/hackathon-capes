@@ -1,6 +1,7 @@
 import Groq from "groq-sdk";
+import api from"../../../config.json";
 
-const api_Key = ""; //tem q arrumar isso
+const api_Key = api.apiKey; 
 const groq = new Groq({ apiKey: api_Key.toString(), dangerouslyAllowBrowser: true});
 
 

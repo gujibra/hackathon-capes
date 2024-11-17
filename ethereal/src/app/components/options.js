@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { readText } from '../features/textUtils';
 import { verficarIncertezasiaAI, verficarOrtografiaAI, verificarDadosAi } from '../features/AI';
+import { setDados, setEscolhaPage, setIncertezas, setTexto } from '../verificar/page';
 let resposta = '';
 let escolha = '';
 
@@ -20,6 +21,7 @@ export default function Options({ setOverlayState }) {
         aprimoramentoTexto: false,
         incertezasHipoteses: false,
     });
+
 
     
 
@@ -58,11 +60,17 @@ export default function Options({ setOverlayState }) {
           const extractedText = await readText();
           let respostaAi = "escolha uma das opções de verificação!"
           if(escolha === "incertezasHipoteses"){
-            respostaAi = await verficarIncertezasiaAI(extractedText);    
+            respostaAi = await verficarIncertezasiaAI(extractedText); 
+            setEscolhaPage('incertezas')   ;
+            setIncertezas();
           }else if(escolha === "dadosAnomalos"){
-            respostaAi = await verificarDadosAi(extractedText);    
+            respostaAi = await verificarDadosAi(extractedText);  
+            setEscolhaPage('dados');            
+            setDados(); 
           }else if(escolha === "aprimoramentoTexto"){
-            respostaAi = await verficarOrtografiaAI(extractedText);   
+            respostaAi = await verficarOrtografiaAI(extractedText);  
+            setEscolhaPage('texto'); 
+            setTexto();
           } 
                 
           resposta = respostaAi; 
@@ -207,6 +215,9 @@ export default function Options({ setOverlayState }) {
 export function getResposta(){
     return resposta;
 }
+
+
+
 
 function setEscolha(str){
     escolha = str;
